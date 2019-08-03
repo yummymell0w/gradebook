@@ -12,22 +12,13 @@ namespace GradeBook
             var book = new Book("Margo's Grade Book");
             book.AddGrade(89.1);
             book.AddGrade(90.5);
+            book.AddGrade(77.5);
             
+            var stats = book.GetStatistics();
 
-
-            var grades = new List<double>() { 12.7, 10.3, 6.11, 4.1 }; ;
-            grades.Add(56.1);
-
-            var result = 0.0;
-            foreach (var number in grades)
-            {
-                result += number;
-            }
-            Console.WriteLine(result);
-
-            result /= grades.Count;
-            Console.WriteLine($"The average grade is {result:N1}.");
-
+            Console.WriteLine($"The highest grade is {stats.High}.");
+            Console.WriteLine($"The lowest grade is {stats.Low}.");
+            Console.WriteLine($"The average grade is {stats.Average}.");
 
         }
     }
